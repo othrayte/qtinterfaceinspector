@@ -1,0 +1,6 @@
+{
+    "name": "BasicInfo",
+    "version": "0.1.0",
+    "author": "othrayte",
+    "types": ["QWidget", "QLabel"]
+}
