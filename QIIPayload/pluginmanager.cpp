@@ -8,7 +8,7 @@
 #include <QJsonArray>
 #include <QDebug>
 
-PluginManager::PluginManager(QObject *parent)
+PluginManager::PluginManager(QObject* parent)
 	: QObject(parent) {}
 
 PluginManager::~PluginManager() {}
@@ -30,30 +30,23 @@ void PluginManager::learn(QFileInfo file) {
 	QString fileName = file.fileName();
 	qDebug() << metadata;
 	// Always read json data, encase it changed due to recompiling
-	PluginData &data = _plugins[fileName];
+	PluginData& data = _plugins[fileName];
 	data.name		= metadata["name"].toString("<unnamed-plugin>");
 	data.version	 = metadata["version"].toString("<unknown-version>");
 	data.author	  = metadata["author"].toString("<unknown-author>");
 	data.filePath	= file.canonicalFilePath();
 	data.fileName	= fileName;
-
-	data.understoodTypes.clear();
-	for (auto type : metadata["types"].toArray()) {
-		if (!type.toString().isEmpty()) {
-			data.understoodTypes.push_back(type.toString());
-		}
-	}
 }
 
-QList<TypeHandler *> PluginManager::handlersFor(QString type) const {
-	QList<TypeHandler *> plugins;
-	for (const auto &plugin : _plugins) {
-		if (plugin.enabled && plugin.understoodTypes.contains(type)) {
+QList<TypeHandler*> PluginManager::handlers() const {
+	QList<TypeHandler*> plugins;
+	for (const auto& plugin : _plugins) {
+		if (plugin.enabled) {
 			if (!_loadedPlugins.contains(plugin.fileName)) {
-				_loadedPlugins[plugin.fileName] = new QPluginLoader(plugin.filePath, const_cast<PluginManager *>(this));
+				_loadedPlugins[plugin.fileName] = new QPluginLoader(plugin.filePath, const_cast<PluginManager*>(this));
 			}
-			if (QPluginLoader *loader = _loadedPlugins[plugin.fileName]) {
-				if (auto instance = qobject_cast<TypeHandler *>(loader->instance())) {
+			if (QPluginLoader* loader = _loadedPlugins[plugin.fileName]) {
+				if (auto instance = qobject_cast<TypeHandler*>(loader->instance())) {
 					plugins.push_back(instance);
 				}
 			}
@@ -65,7 +58,7 @@ QList<TypeHandler *> PluginManager::handlersFor(QString type) const {
 void PluginManager::search() {
 	qDebug() << "[PluginManager]"
 			 << "Searching: " << pluginDirectory();
-	for (const QFileInfo &file : pluginDirectory().entryInfoList(QDir::Files)) {
+	for (const QFileInfo& file : pluginDirectory().entryInfoList(QDir::Files)) {
 		learn(file);
 	}
 	emit pluginListUpdated();

@@ -7,5 +7,5 @@
 
 class TypeHandlerProvider {
 public:
-	virtual QList<TypeHandler*> handlersFor(QString type) const = 0;
+	virtual QList<TypeHandler*> handlers() const = 0;
 };

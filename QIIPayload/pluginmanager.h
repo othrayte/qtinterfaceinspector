@@ -16,7 +16,6 @@ struct PluginData {
 	bool enabled;
 	QString fileName;
 	QString filePath;
-	QList<QString> understoodTypes;
 };
 
 class PluginManager : public QObject, public TypeHandlerProvider {
@@ -31,7 +30,7 @@ public:
 	bool knows(QString fileName);
 	void learn(QFileInfo file);
 
-	virtual QList<TypeHandler*> handlersFor(QString type) const override;
+	virtual QList<TypeHandler*> handlers() const override;
 
 signals:
 	void pluginListUpdated();

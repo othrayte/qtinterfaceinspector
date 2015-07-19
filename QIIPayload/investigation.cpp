@@ -16,7 +16,7 @@ void Investigation::investigate(QString type, void* thing) {
 	_knownTypes << type;
 	QSet<QString> newTypes;
 
-	for (auto typeHandler : _typeHandlerProvider.handlersFor(type)) {
+	for (auto typeHandler : _typeHandlerProvider.handlers()) {
 		// Find all properties
 		_sink.addProperties(type, typeHandler->propertiesFor(type, thing));
 
@@ -28,9 +28,9 @@ void Investigation::investigate(QString type, void* thing) {
 			}
 		}
 	}
-	// Add properties for those types
+
 	for (const auto& newType : newTypes) {
-		for (auto typeHandler : _typeHandlerProvider.handlersFor(type)) {
+		for (auto typeHandler : _typeHandlerProvider.handlers()) {
 			// Inspect all types encase there are more sub types
 			investigate(newType, thing);
 		}
