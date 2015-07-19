@@ -3,6 +3,7 @@
 #include "..\QIIPlugin\typehandler.h"
 
 #include <QObject>
+#include <QSet>
 
 class BasicInfoPlugin : public QObject, public TypeHandler {
 	Q_OBJECT
@@ -24,4 +25,5 @@ public:
 
 private:
 	QImage _icon;
+	mutable QSet<QString> _knownQObjectTypes;
 };
