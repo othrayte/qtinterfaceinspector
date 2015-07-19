@@ -35,7 +35,7 @@ public:
 	// List any extra types that the thing 'is'.
 	virtual std::list<QString> extraTypeFor(QString type, void* thing) const = 0;
 
-	// List all properties of the given thing, as a map of the property name and value.
+	// List all properties of the given thing.
 	virtual std::list<Property> propertiesFor(QString type, void* thing) const = 0;
 
 	// An icon to represent the plugin.
