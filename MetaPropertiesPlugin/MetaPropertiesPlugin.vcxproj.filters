@@ -36,23 +36,23 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="basicinfoplugin.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_basicinfoplugin.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_metapropertiesplugin.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_basicinfoplugin.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_metapropertiesplugin.cpp">
       <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="metapropertiesplugin.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="basicinfoplugin.h">
+    <CustomBuild Include="metapropertiesplugin.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <None Include="basicinfoplugin.json">
+    <None Include="metapropertiesplugin.json">
       <Filter>Other Files</Filter>
     </None>
   </ItemGroup>

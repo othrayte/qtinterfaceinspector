@@ -12,7 +12,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QtInterfaceInspector", "QtI
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InterfaceTest", "InterfaceTest\InterfaceTest.vcxproj", "{F0E22652-8A21-4193-885B-3DAD6865B17B}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BasicInfoPlugin", "BasicInfoPlugin\BasicInfoPlugin.vcxproj", "{0EBE0194-63B8-4FC2-B900-53AC10415F81}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MetaPropertiesPlugin", "MetaPropertiesPlugin\MetaPropertiesPlugin.vcxproj", "{0EBE0194-63B8-4FC2-B900-53AC10415F81}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QIIPlugin", "QIIPlugin\QIIPlugin.vcxproj", "{4BB4371A-FEED-4DAB-899D-34A4AA14C590}"
 EndProject

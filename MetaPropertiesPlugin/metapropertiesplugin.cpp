@@ -1,19 +1,19 @@
 #include <QtCore/QtPlugin>
 
-#include "basicinfoplugin.h"
+#include "metapropertiesplugin.h"
 
 #include <QLabel>
 #include <QMetaProperty>
 
 #include <cassert>
 
-std::list<std::string> BasicInfoPlugin::customTabs() const { return {}; }
+std::list<std::string> MetaPropertiesPlugin::customTabs() const { return{}; }
 
-QWidget* BasicInfoPlugin::getTabContent(std::string) const { return nullptr; }
+QWidget* MetaPropertiesPlugin::getTabContent(std::string) const { return nullptr; }
 
-void BasicInfoPlugin::showCustomInfoFor(QString type, void* thing) const {}
+void MetaPropertiesPlugin::showCustomInfoFor(QString type, void* thing) const {}
 
-std::list<QString> BasicInfoPlugin::extraTypeFor(QString type, void* thing) const {
+std::list<QString> MetaPropertiesPlugin::extraTypeFor(QString type, void* thing) const {
 	std::list<QString> extraTypes = {};
 	if (type == "QWidget") {
 		extraTypes.push_back("QObject");
@@ -29,7 +29,7 @@ std::list<QString> BasicInfoPlugin::extraTypeFor(QString type, void* thing) cons
 	return extraTypes;
 }
 
-std::list<Property> BasicInfoPlugin::propertiesFor(QString type, void* thing) const {
+std::list<Property> MetaPropertiesPlugin::propertiesFor(QString type, void* thing) const {
 	std::list<Property> properties = {};
 	if (_knownQObjectTypes.contains(type)) {
 		auto object					= static_cast<QObject*>(thing);
@@ -51,4 +51,4 @@ std::list<Property> BasicInfoPlugin::propertiesFor(QString type, void* thing) co
 	return properties;
 }
 
-const QImage& BasicInfoPlugin::icon() const { return _icon; }
+const QImage& MetaPropertiesPlugin::icon() const { return _icon; }
