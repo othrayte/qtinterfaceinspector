@@ -63,23 +63,13 @@
          <number>0</number>
         </property>
         <item>
-         <widget class="QTreeWidget" name="treeWidget">
+         <widget class="QTreeView" name="propertyView">
           <property name="frameShape">
            <enum>QFrame::NoFrame</enum>
           </property>
           <property name="headerHidden">
            <bool>false</bool>
           </property>
-          <column>
-           <property name="text">
-            <string>Property</string>
-           </property>
-          </column>
-          <column>
-           <property name="text">
-            <string>Value</string>
-           </property>
-          </column>
          </widget>
         </item>
        </layout>

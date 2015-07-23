@@ -18,21 +18,6 @@ QiiDialog::QiiDialog(QWidget* parent)
 			});
 }
 
-void QiiDialog::clearProperties() { _typePropertyWidgets.clear(); }
-
-void QiiDialog::addProperties(QString type, std::list<Property> properties) {
-	if (!_typePropertyWidgets.contains(type)) {
-		auto& typeEntry = _typePropertyWidgets[type];
-		if (typeEntry.text(0).isEmpty()) typeEntry.setText(0, type);
-		_dialog.treeWidget->addTopLevelItem(&typeEntry);
-	}
-
-	auto& typeEntry = _typePropertyWidgets[type];
-	for (const auto& property : properties) {
-		auto propertyItem = new QTreeWidgetItem(&typeEntry);
-		propertyItem->setText(0, property.name);
-		propertyItem->setData(1, Qt::DisplayRole, property.value);
-	}
-}
+void QiiDialog::setModel(QAbstractItemModel* model) { _dialog.propertyView->setModel(model); }
 
 QiiDialog::~QiiDialog() {}

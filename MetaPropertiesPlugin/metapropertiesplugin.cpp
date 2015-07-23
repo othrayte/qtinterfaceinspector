@@ -7,7 +7,7 @@
 
 #include <cassert>
 
-std::list<std::string> MetaPropertiesPlugin::customTabs() const { return{}; }
+std::list<std::string> MetaPropertiesPlugin::customTabs() const { return {}; }
 
 QWidget* MetaPropertiesPlugin::getTabContent(std::string) const { return nullptr; }
 
@@ -44,11 +44,26 @@ std::list<Property> MetaPropertiesPlugin::propertiesFor(QString type, void* thin
 		if (metaObject) {
 			for (int i = metaObject->propertyOffset(); i < metaObject->propertyCount(); ++i) {
 				QMetaProperty property = metaObject->property(i);
-				properties.emplace_back(property.name(), property.read(object));
+				properties.emplace_back(property.name(), QVariant::fromValue(PropertyRef{object, property}));
 			}
 		}
 	}
 	return properties;
+}
+
+QVariant MetaPropertiesPlugin::get(Property property) const {
+	if (property.id.canConvert<PropertyRef>()) {
+		PropertyRef ref = property.id.value<PropertyRef>();
+		return ref.metaProperty.read(ref.object);
+	}
+	return QVariant();
+}
+
+void MetaPropertiesPlugin::set(Property property, QVariant value) const {
+	if (property.id.canConvert<PropertyRef>()) {
+		PropertyRef ref = property.id.value<PropertyRef>();
+		ref.metaProperty.write(ref.object, value);
+	}
 }
 
 const QImage& MetaPropertiesPlugin::icon() const { return _icon; }

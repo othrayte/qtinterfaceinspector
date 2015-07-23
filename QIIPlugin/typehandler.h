@@ -38,6 +38,12 @@ public:
 	// List all properties of the given thing.
 	virtual std::list<Property> propertiesFor(QString type, void* thing) const = 0;
 
+	// Get the value of a property.
+	virtual QVariant get(Property property) const = 0;
+
+	// Set the value of a property.
+	virtual void set(Property property, QVariant value) const = 0;
+
 	// An icon to represent the plugin.
 	// Not yet supported.
 	virtual const QImage& icon() const = 0;

@@ -4,6 +4,7 @@
 
 #include <QObject>
 #include <QSet>
+#include <QMetaProperty>
 
 class MetaPropertiesPlugin : public QObject, public TypeHandler {
 	Q_OBJECT
@@ -11,6 +12,11 @@ class MetaPropertiesPlugin : public QObject, public TypeHandler {
 	Q_INTERFACES(TypeHandler)
 
 public:
+	struct PropertyRef {
+		QObject* object;
+		QMetaProperty metaProperty;
+	};
+
 	virtual std::list<std::string> customTabs() const override;
 
 	virtual QWidget* getTabContent(std::string) const override;
@@ -21,9 +27,15 @@ public:
 
 	virtual std::list<Property> propertiesFor(QString type, void* thing) const override;
 
+	virtual QVariant get(Property property) const override;
+
+	virtual void set(Property property, QVariant value) const override;
+
 	virtual const QImage& icon() const override;
 
 private:
 	QImage _icon;
 	mutable QSet<QString> _knownQObjectTypes;
 };
+
+Q_DECLARE_METATYPE(MetaPropertiesPlugin::PropertyRef);

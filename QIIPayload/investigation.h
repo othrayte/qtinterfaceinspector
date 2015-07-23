@@ -1,23 +1,26 @@
 #pragma once
 
 #include "typehandlerprovider.h"
+#include "propertymodel.h"
 
 #include <QString>
 #include <QSet>
 
-class PropertySink;
+class PropertyView;
 class PluginManager;
 
 class Investigation {
 public:
-	Investigation(TypeHandlerProvider& typeHandlerProvider, PropertySink& sink);
+	Investigation(TypeHandlerProvider& typeHandlerProvider);
 
 	void investigate(QWidget* widget);
+
+	PropertyModel* propertyModel() { return &_model; }
 
 private:
 	void investigate(QString type, void* thing);
 
 	TypeHandlerProvider& _typeHandlerProvider;
-	PropertySink& _sink;
+	PropertyModel _model;
 	QSet<QString> _knownTypes;
 };

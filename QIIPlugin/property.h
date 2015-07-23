@@ -4,10 +4,10 @@
 #include <QVariant>
 
 struct Property {
-	Property(const QString& name, QVariant value)
+	Property(const QString& name, QVariant id)
 		: name(name)
-		, value(value) {}
+		, id(id) {}
 
 	QString name;
-	QVariant value;
+	QVariant id;
 };

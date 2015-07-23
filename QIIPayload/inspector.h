@@ -1,6 +1,6 @@
 #pragma once
 
-#include "propertysink.h"
+#include "propertyview.h"
 #include "investigation.h"
 
 #include <QWidget>
@@ -12,7 +12,7 @@ class Inspector : public QObject {
 	Q_OBJECT
 
 public:
-	Inspector(TypeHandlerProvider& typeHandlerProvider, PropertySink& sink, QObject* parent = nullptr);
+	Inspector(TypeHandlerProvider& typeHandlerProvider, PropertyView& view, QObject* parent = nullptr);
 	~Inspector();
 
 public slots:
@@ -21,5 +21,5 @@ public slots:
 private:
 	std::unique_ptr<Investigation> _investigation;
 	TypeHandlerProvider& _typeHandlerProvider;
-	PropertySink& _sink;
+	PropertyView& _view;
 };

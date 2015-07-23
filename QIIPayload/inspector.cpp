@@ -1,13 +1,15 @@
 #include "inspector.h"
 
-Inspector::Inspector(TypeHandlerProvider& typeHandlerProvider, PropertySink& sink, QObject* parent)
+Inspector::Inspector(TypeHandlerProvider& typeHandlerProvider, PropertyView& view, QObject* parent)
 	: QObject(parent)
 	, _typeHandlerProvider(typeHandlerProvider)
-	, _sink(sink) {}
+	, _view(view) {}
 
 Inspector::~Inspector() {}
 
 void Inspector::startInvestigation(QWidget* widget) {
-	_investigation = std::make_unique<Investigation>(_typeHandlerProvider, _sink);
+	_view.setModel(nullptr);
+	_investigation = std::make_unique<Investigation>(_typeHandlerProvider);
+	_view.setModel(_investigation->propertyModel());
 	_investigation->investigate(widget);
 }
