@@ -1,5 +1,7 @@
 #include "qiidialog.h"
 
+#include "propertyitemdelegate.h"
+
 #include <QDebug>
 #include <QApplication>
 
@@ -16,6 +18,8 @@ QiiDialog::QiiDialog(QWidget* parent)
 			[this](const QItemSelection& selection, const QItemSelection&) {
 				emit infoRequested(static_cast<QWidget*>(selection.indexes().first().internalPointer()));
 			});
+
+	_dialog.propertyView->setItemDelegate(new PropertyItemDelegate(this));
 }
 
 void QiiDialog::setModel(QAbstractItemModel* model) { _dialog.propertyView->setModel(model); }

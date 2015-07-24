@@ -42,7 +42,10 @@ public:
 	virtual QVariant get(Property property) const = 0;
 
 	// Set the value of a property.
-	virtual void set(Property property, QVariant value) const = 0;
+	virtual bool set(Property property, QVariant value) const = 0;
+
+	// Queries if the property is setable.
+	virtual bool isSetable(Property property) const = 0;
 
 	// An icon to represent the plugin.
 	// Not yet supported.

@@ -38,7 +38,7 @@ int PropertyModel::rowCount(const QModelIndex& parent) const {
 int PropertyModel::columnCount(const QModelIndex& parent) const { return 2; }
 
 QVariant PropertyModel::data(const QModelIndex& index, int role) const {
-	if (role == Qt::DisplayRole) {
+	if (role == Qt::DisplayRole || role == Qt::EditRole) {
 		if (index.isValid()) {
 			if (index.internalId() == -1) {
 				if (index.column() == 0) {
@@ -68,6 +68,29 @@ QVariant PropertyModel::headerData(int section, Qt::Orientation orientation, int
 	return QVariant();
 }
 
+bool PropertyModel::setData(const QModelIndex& index, const QVariant& value, int role) {
+	if (role == Qt::EditRole && index.isValid() && index.internalId() != -1 && index.column() == 1) {
+		QString type				 = _types.at(index.internalId());
+		const PropertyToken& token = _properties[type].at(index.row());
+		if (token.typeHandler->set(token.property, value)) {
+			// emit dataChanged(index, index, { role });
+			return true;
+		}
+	}
+	return false;
+}
+
+Qt::ItemFlags PropertyModel::flags(const QModelIndex& index) const {
+	if (index.isValid() && index.internalId() != -1 && index.column() == 1) {
+		QString type				 = _types.at(index.internalId());
+		const PropertyToken& token = _properties[type].at(index.row());
+		if (token.typeHandler->isSetable(token.property)) {
+			return Qt::ItemIsEnabled | Qt::ItemIsSelectable | Qt::ItemIsEditable;
+		}
+	}
+	return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+}
+
 void PropertyModel::addProperties(QString type, TypeHandler* typeHandler, std::list<Property> properties) {
 	if (!_properties.contains(type)) {
 		beginInsertRows(QModelIndex(), _types.size(), _types.size() + 1);
@@ -86,7 +109,6 @@ void PropertyModel::addProperties(QString type, TypeHandler* typeHandler, std::l
 
 void PropertyModel::refresh() {
 	for (int i = 0; i < _types.size(); ++i) {
-		emit dataChanged(createIndex(0, 1, i), createIndex(_properties[_types[i]].size(), 1, i),
-						 {Qt::DisplayRole, Qt::EditRole});
+		emit dataChanged(createIndex(0, 1, i), createIndex(_properties[_types[i]].size(), 1, i), {Qt::DisplayRole});
 	}
 }

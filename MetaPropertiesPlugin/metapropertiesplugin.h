@@ -29,7 +29,9 @@ public:
 
 	virtual QVariant get(Property property) const override;
 
-	virtual void set(Property property, QVariant value) const override;
+	virtual bool set(Property property, QVariant value) const override;
+
+	virtual bool isSetable(Property property) const override;
 
 	virtual const QImage& icon() const override;
 

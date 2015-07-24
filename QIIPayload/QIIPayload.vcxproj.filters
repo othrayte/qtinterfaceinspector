@@ -83,6 +83,9 @@
     <ClCompile Include="propertymodel.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="propertyitemdelegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="widgetmodel.h">
@@ -101,6 +104,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="propertyview.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="propertyitemdelegate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

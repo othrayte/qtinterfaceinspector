@@ -59,11 +59,20 @@ QVariant MetaPropertiesPlugin::get(Property property) const {
 	return QVariant();
 }
 
-void MetaPropertiesPlugin::set(Property property, QVariant value) const {
+bool MetaPropertiesPlugin::set(Property property, QVariant value) const {
 	if (property.id.canConvert<PropertyRef>()) {
 		PropertyRef ref = property.id.value<PropertyRef>();
-		ref.metaProperty.write(ref.object, value);
+		return ref.metaProperty.write(ref.object, value);
 	}
+	return false;
+}
+
+bool MetaPropertiesPlugin::isSetable(Property property) const {
+	if (property.id.canConvert<PropertyRef>()) {
+		PropertyRef ref = property.id.value<PropertyRef>();
+		return ref.metaProperty.isWritable();
+	}
+	return false;
 }
 
 const QImage& MetaPropertiesPlugin::icon() const { return _icon; }
