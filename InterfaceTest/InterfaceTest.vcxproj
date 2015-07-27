@@ -141,7 +141,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\qrc_interfacetest.cpp">
+    <ClCompile Include="GeneratedFiles\qrc_style.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -202,24 +202,268 @@
     <ClInclude Include="GeneratedFiles\ui_interfacetest.h" />
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="interfacetest.qrc">
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+    <CustomBuild Include="..\QDarkStyleSheet\style.qrc">
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(FullPath);..\QDarkStyleSheet\up_arrow_disabled.png;..\QDarkStyleSheet\Hmovetoolbar.png;..\QDarkStyleSheet\stylesheet-branch-end.png;..\QDarkStyleSheet\branch_closed-on.png;..\QDarkStyleSheet\stylesheet-vline.png;..\QDarkStyleSheet\branch_closed.png;..\QDarkStyleSheet\branch_open-on.png;..\QDarkStyleSheet\transparent.png;..\QDarkStyleSheet\right_arrow_disabled.png;..\QDarkStyleSheet\sizegrip.png;..\QDarkStyleSheet\close.png;..\QDarkStyleSheet\close-hover.png;..\QDarkStyleSheet\close-pressed.png;..\QDarkStyleSheet\down_arrow.png;..\QDarkStyleSheet\Vmovetoolbar.png;..\QDarkStyleSheet\left_arrow.png;..\QDarkStyleSheet\stylesheet-branch-more.png;..\QDarkStyleSheet\up_arrow.png;..\QDarkStyleSheet\right_arrow.png;..\QDarkStyleSheet\left_arrow_disabled.png;..\QDarkStyleSheet\Hsepartoolbar.png;..\QDarkStyleSheet\branch_open.png;..\QDarkStyleSheet\Vsepartoolbar.png;..\QDarkStyleSheet\down_arrow_disabled.png;..\QDarkStyleSheet\undock.png;..\QDarkStyleSheet\checkbox_checked_disabled.png;..\QDarkStyleSheet\checkbox_checked_focus.png;..\QDarkStyleSheet\checkbox_checked.png;..\QDarkStyleSheet\checkbox_indeterminate.png;..\QDarkStyleSheet\checkbox_indeterminate_focus.png;..\QDarkStyleSheet\checkbox_unchecked_disabled.png;..\QDarkStyleSheet\checkbox_unchecked_focus.png;..\QDarkStyleSheet\checkbox_unchecked.png;..\QDarkStyleSheet\radio_checked_disabled.png;..\QDarkStyleSheet\radio_checked_focus.png;..\QDarkStyleSheet\radio_checked.png;..\QDarkStyleSheet\radio_unchecked_disabled.png;..\QDarkStyleSheet\radio_unchecked_focus.png;..\QDarkStyleSheet\radio_unchecked.png;..\QDarkStyleSheet\style.qss;%(AdditionalInputs)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Rcc%27ing %(Identity)...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(FullPath);..\QDarkStyleSheet\up_arrow_disabled.png;..\QDarkStyleSheet\Hmovetoolbar.png;..\QDarkStyleSheet\stylesheet-branch-end.png;..\QDarkStyleSheet\branch_closed-on.png;..\QDarkStyleSheet\stylesheet-vline.png;..\QDarkStyleSheet\branch_closed.png;..\QDarkStyleSheet\branch_open-on.png;..\QDarkStyleSheet\transparent.png;..\QDarkStyleSheet\right_arrow_disabled.png;..\QDarkStyleSheet\sizegrip.png;..\QDarkStyleSheet\close.png;..\QDarkStyleSheet\close-hover.png;..\QDarkStyleSheet\close-pressed.png;..\QDarkStyleSheet\down_arrow.png;..\QDarkStyleSheet\Vmovetoolbar.png;..\QDarkStyleSheet\left_arrow.png;..\QDarkStyleSheet\stylesheet-branch-more.png;..\QDarkStyleSheet\up_arrow.png;..\QDarkStyleSheet\right_arrow.png;..\QDarkStyleSheet\left_arrow_disabled.png;..\QDarkStyleSheet\Hsepartoolbar.png;..\QDarkStyleSheet\branch_open.png;..\QDarkStyleSheet\Vsepartoolbar.png;..\QDarkStyleSheet\down_arrow_disabled.png;..\QDarkStyleSheet\undock.png;..\QDarkStyleSheet\checkbox_checked_disabled.png;..\QDarkStyleSheet\checkbox_checked_focus.png;..\QDarkStyleSheet\checkbox_checked.png;..\QDarkStyleSheet\checkbox_indeterminate.png;..\QDarkStyleSheet\checkbox_indeterminate_focus.png;..\QDarkStyleSheet\checkbox_unchecked_disabled.png;..\QDarkStyleSheet\checkbox_unchecked_focus.png;..\QDarkStyleSheet\checkbox_unchecked.png;..\QDarkStyleSheet\radio_checked_disabled.png;..\QDarkStyleSheet\radio_checked_focus.png;..\QDarkStyleSheet\radio_checked.png;..\QDarkStyleSheet\radio_unchecked_disabled.png;..\QDarkStyleSheet\radio_unchecked_focus.png;..\QDarkStyleSheet\radio_unchecked.png;..\QDarkStyleSheet\style.qss;%(AdditionalInputs)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Rcc%27ing %(Identity)...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(FullPath);..\QDarkStyleSheet\up_arrow_disabled.png;..\QDarkStyleSheet\Hmovetoolbar.png;..\QDarkStyleSheet\stylesheet-branch-end.png;..\QDarkStyleSheet\branch_closed-on.png;..\QDarkStyleSheet\stylesheet-vline.png;..\QDarkStyleSheet\branch_closed.png;..\QDarkStyleSheet\branch_open-on.png;..\QDarkStyleSheet\transparent.png;..\QDarkStyleSheet\right_arrow_disabled.png;..\QDarkStyleSheet\sizegrip.png;..\QDarkStyleSheet\close.png;..\QDarkStyleSheet\close-hover.png;..\QDarkStyleSheet\close-pressed.png;..\QDarkStyleSheet\down_arrow.png;..\QDarkStyleSheet\Vmovetoolbar.png;..\QDarkStyleSheet\left_arrow.png;..\QDarkStyleSheet\stylesheet-branch-more.png;..\QDarkStyleSheet\up_arrow.png;..\QDarkStyleSheet\right_arrow.png;..\QDarkStyleSheet\left_arrow_disabled.png;..\QDarkStyleSheet\Hsepartoolbar.png;..\QDarkStyleSheet\branch_open.png;..\QDarkStyleSheet\Vsepartoolbar.png;..\QDarkStyleSheet\down_arrow_disabled.png;..\QDarkStyleSheet\undock.png;..\QDarkStyleSheet\checkbox_checked_disabled.png;..\QDarkStyleSheet\checkbox_checked_focus.png;..\QDarkStyleSheet\checkbox_checked.png;..\QDarkStyleSheet\checkbox_indeterminate.png;..\QDarkStyleSheet\checkbox_indeterminate_focus.png;..\QDarkStyleSheet\checkbox_unchecked_disabled.png;..\QDarkStyleSheet\checkbox_unchecked_focus.png;..\QDarkStyleSheet\checkbox_unchecked.png;..\QDarkStyleSheet\radio_checked_disabled.png;..\QDarkStyleSheet\radio_checked_focus.png;..\QDarkStyleSheet\radio_checked.png;..\QDarkStyleSheet\radio_unchecked_disabled.png;..\QDarkStyleSheet\radio_unchecked_focus.png;..\QDarkStyleSheet\radio_unchecked.png;..\QDarkStyleSheet\style.qss;%(AdditionalInputs)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Rcc%27ing %(Identity)...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(FullPath);%(AdditionalInputs)</AdditionalInputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(FullPath);..\QDarkStyleSheet\up_arrow_disabled.png;..\QDarkStyleSheet\Hmovetoolbar.png;..\QDarkStyleSheet\stylesheet-branch-end.png;..\QDarkStyleSheet\branch_closed-on.png;..\QDarkStyleSheet\stylesheet-vline.png;..\QDarkStyleSheet\branch_closed.png;..\QDarkStyleSheet\branch_open-on.png;..\QDarkStyleSheet\transparent.png;..\QDarkStyleSheet\right_arrow_disabled.png;..\QDarkStyleSheet\sizegrip.png;..\QDarkStyleSheet\close.png;..\QDarkStyleSheet\close-hover.png;..\QDarkStyleSheet\close-pressed.png;..\QDarkStyleSheet\down_arrow.png;..\QDarkStyleSheet\Vmovetoolbar.png;..\QDarkStyleSheet\left_arrow.png;..\QDarkStyleSheet\stylesheet-branch-more.png;..\QDarkStyleSheet\up_arrow.png;..\QDarkStyleSheet\right_arrow.png;..\QDarkStyleSheet\left_arrow_disabled.png;..\QDarkStyleSheet\Hsepartoolbar.png;..\QDarkStyleSheet\branch_open.png;..\QDarkStyleSheet\Vsepartoolbar.png;..\QDarkStyleSheet\down_arrow_disabled.png;..\QDarkStyleSheet\undock.png;..\QDarkStyleSheet\checkbox_checked_disabled.png;..\QDarkStyleSheet\checkbox_checked_focus.png;..\QDarkStyleSheet\checkbox_checked.png;..\QDarkStyleSheet\checkbox_indeterminate.png;..\QDarkStyleSheet\checkbox_indeterminate_focus.png;..\QDarkStyleSheet\checkbox_unchecked_disabled.png;..\QDarkStyleSheet\checkbox_unchecked_focus.png;..\QDarkStyleSheet\checkbox_unchecked.png;..\QDarkStyleSheet\radio_checked_disabled.png;..\QDarkStyleSheet\radio_checked_focus.png;..\QDarkStyleSheet\radio_checked.png;..\QDarkStyleSheet\radio_unchecked_disabled.png;..\QDarkStyleSheet\radio_unchecked_focus.png;..\QDarkStyleSheet\radio_unchecked.png;..\QDarkStyleSheet\style.qss;%(AdditionalInputs)</AdditionalInputs>
       <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Rcc%27ing %(Identity)...</Message>
       <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.\GeneratedFiles\qrc_%(Filename).cpp;%(Outputs)</Outputs>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">"$(QTDIR)\bin\rcc.exe" -name "%(Filename)" -no-compress "%(FullPath)" -o .\GeneratedFiles\qrc_%(Filename).cpp</Command>
     </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\QDarkStyleSheet\branch_closed-on.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\branch_closed.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\branch_open-on.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\branch_open.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_checked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_checked_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_checked_focus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_indeterminate.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_indeterminate_focus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_unchecked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_unchecked_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_unchecked_focus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\close-hover.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\close-pressed.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\close.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\down_arrow.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\down_arrow_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\Hmovetoolbar.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\Hsepartoolbar.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\left_arrow.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\left_arrow_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\radio_checked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\radio_checked_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\radio_checked_focus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\radio_unchecked.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\radio_unchecked_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\radio_unchecked_focus.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\right_arrow.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\right_arrow_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\sizegrip.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\stylesheet-branch-end.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\stylesheet-branch-more.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\stylesheet-vline.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\transparent.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\undock.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\up_arrow.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\up_arrow_disabled.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\Vmovetoolbar.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\Vsepartoolbar.png">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\QDarkStyleSheet\style.qss">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </None>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

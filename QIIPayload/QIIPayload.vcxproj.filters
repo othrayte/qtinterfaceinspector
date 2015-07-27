@@ -114,9 +114,6 @@
     <CustomBuild Include="qiipayload.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="qiidialog.ui">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="inspector.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
@@ -125,6 +122,9 @@
     </CustomBuild>
     <CustomBuild Include="pluginmanager.h">
       <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="qiidialog.ui">
+      <Filter>Form Files</Filter>
     </CustomBuild>
   </ItemGroup>
 </Project>

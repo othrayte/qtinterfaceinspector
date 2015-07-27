@@ -7,11 +7,11 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>363</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>QtInterfaceInspector</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
@@ -30,10 +30,33 @@
     <number>0</number>
    </property>
    <item>
-    <widget class="QListWidget" name="processList"/>
+    <widget class="QListWidget" name="processList">
+     <property name="frameShape">
+      <enum>QFrame::NoFrame</enum>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="pushButton">
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="Resources/qtinterfaceinspector.qrc">
+       <normaloff>:/icon/refresh.svg</normaloff>:/icon/refresh.svg</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>64</width>
+       <height>64</height>
+      </size>
+     </property>
+    </widget>
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="Resources/qtinterfaceinspector.qrc"/>
+ </resources>
  <connections/>
 </ui>

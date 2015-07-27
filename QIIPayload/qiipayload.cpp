@@ -42,6 +42,12 @@ void QiiPayload::start() {
 
 	connect(dialog, &QiiDialog::infoRequested, inspector, &Inspector::startInvestigation);
 
+	QFile stylesheet(":/qdarkstyle/style.qss");
+	if (!stylesheet.open(QFile::ReadOnly | QFile::Text))
+		qWarning() << "[QIIPayload]"
+				   << "Failed to open style.qss";
+	dialog->setStyleSheet(QTextStream(&stylesheet).readAll());
+
 	dialog->show();
 
 	qDebug() << "[QIIPayload]"

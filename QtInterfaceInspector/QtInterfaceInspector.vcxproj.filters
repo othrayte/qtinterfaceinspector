@@ -41,15 +41,6 @@
     <ClCompile Include="qtinterfaceinspector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_mainwindow.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_mainwindow.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="mainwindow.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="process.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -77,9 +68,6 @@
     <ClCompile Include="dllinjector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\qrc_qtinterfaceinspector.cpp">
-      <Filter>Generated Files</Filter>
-    </ClCompile>
     <ClCompile Include="investigation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -95,15 +83,15 @@
     <ClCompile Include="GeneratedFiles\Release\moc_investigation.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_qtinterfaceinspector.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_style.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="mainwindow.ui">
-      <Filter>Form Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="qtinterfaceinspector.h">
-      <Filter>Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="mainwindow.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="processlistdialog.ui">
@@ -112,20 +100,20 @@
     <CustomBuild Include="processlistdialog.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="qtinterfaceinspector.qrc">
-      <Filter>Resource Files</Filter>
-    </CustomBuild>
     <CustomBuild Include="dllinjector.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="investigation.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\QDarkStyleSheet\style.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Resources\qtinterfaceinspector.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GeneratedFiles\ui_mainwindow.h">
-      <Filter>Generated Files</Filter>
-    </ClInclude>
     <ClInclude Include="process.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -138,5 +126,246 @@
     <ClInclude Include="processlistitem.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="..\QDarkStyleSheet\up_arrow_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\Hmovetoolbar.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\stylesheet-branch-end.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\branch_closed-on.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\stylesheet-vline.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\branch_closed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\branch_open-on.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\transparent.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\right_arrow_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\sizegrip.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\close.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\close-hover.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\close-pressed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\down_arrow.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\Vmovetoolbar.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\left_arrow.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\stylesheet-branch-more.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\up_arrow.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\right_arrow.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\left_arrow_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\Hsepartoolbar.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\branch_open.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\Vsepartoolbar.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\down_arrow_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\undock.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_checked_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_checked_focus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_checked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_indeterminate.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_indeterminate_focus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_unchecked_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_unchecked_focus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\checkbox_unchecked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\radio_checked_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\radio_checked_focus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\radio_checked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\radio_unchecked_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\radio_unchecked_focus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="..\QDarkStyleSheet\radio_unchecked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\up_arrow_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Hmovetoolbar.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\stylesheet-branch-end.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\branch_closed-on.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\stylesheet-vline.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\branch_closed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\branch_open-on.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\transparent.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\right_arrow_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\sizegrip.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\close.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\close-hover.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\close-pressed.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\down_arrow.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Vmovetoolbar.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\left_arrow.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\stylesheet-branch-more.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\up_arrow.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\right_arrow.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\left_arrow_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Hsepartoolbar.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\branch_open.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\Vsepartoolbar.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\down_arrow_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\undock.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\checkbox_checked_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\checkbox_checked_focus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\checkbox_checked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\checkbox_indeterminate.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\checkbox_indeterminate_focus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\checkbox_unchecked_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\checkbox_unchecked_focus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\checkbox_unchecked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\radio_checked_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\radio_checked_focus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\radio_checked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\radio_unchecked_disabled.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\radio_unchecked_focus.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\radio_unchecked.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\QDarkStyleSheet\style.qss">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

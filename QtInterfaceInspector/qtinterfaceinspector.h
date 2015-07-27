@@ -1,6 +1,5 @@
 #pragma once
 
-#include "mainwindow.h"
 #include "process.h"
 #include "investigation.h"
 
