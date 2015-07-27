@@ -35,6 +35,9 @@ ProcessList QtProcessFinder::search() {
 	// Now walk the snapshot of processes, and
 	// display information about each process in turn
 	do {
+		// Skip the system idle process
+		if (pe32.th32ProcessID == 0) continue;
+
 		// Retrieve the priority class.
 		dwPriorityClass = 0;
 		hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pe32.th32ProcessID);
