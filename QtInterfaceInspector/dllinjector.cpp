@@ -11,6 +11,10 @@ DllInjector::~DllInjector() { _payload.waitForFinished(); }
 
 void DllInjector::inject() {
 	HMODULE kernel32 = ::GetModuleHandle(L"Kernel32");
+	if (!kernel32) {
+		qCritical() << QString("Get module handle for Kernel32");
+		return;
+	}
 
 	// Get full path of "qiipayload.dll"
 	QString payloadDllPath = _dllFile.canonicalFilePath();
@@ -51,7 +55,11 @@ void DllInjector::inject() {
 		if (module != NULL) {
 			// Unload the dll from the remote process
 			// (via CreateRemoteThread & FreeLibrary)
-			HMODULE kernel32	= ::GetModuleHandle(L"Kernel32");
+			HMODULE kernel32 = ::GetModuleHandle(L"Kernel32");
+			if (!kernel32) {
+				qCritical() << QString("Get module handle for Kernel32");
+				return;
+			}
 			HANDLE unloadThread = ::CreateRemoteThread(
 				_process, NULL, 0, (LPTHREAD_START_ROUTINE)::GetProcAddress(kernel32, "FreeLibrary"), (void*)module, 0,
 				NULL);
