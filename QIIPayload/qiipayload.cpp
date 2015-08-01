@@ -38,7 +38,7 @@ void QiiPayload::start() {
 	auto dialog = new QiiDialog();
 	connect(this, &QObject::destroyed, dialog, &QObject::deleteLater);
 
-	auto inspector = new Inspector(*pluginManager, *dialog, this);
+	auto inspector = new Inspector(*pluginManager, *dialog, *dialog, this);
 
 	connect(dialog, &QiiDialog::infoRequested, inspector, &Inspector::startInvestigation);
 

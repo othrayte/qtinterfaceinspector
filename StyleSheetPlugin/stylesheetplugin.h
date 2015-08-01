@@ -2,20 +2,12 @@
 
 #include "..\QIIPlugin\typehandler.h"
 
-#include <QObject>
-#include <QMetaProperty>
-
-class MetaPropertiesPlugin : public QObject, public TypeHandler {
+class StyleSheetPlugin : public QObject, public TypeHandler {
 	Q_OBJECT
-	Q_PLUGIN_METADATA(IID "net.othrayte.qii.TypeHandler" FILE "metapropertiesplugin.json")
+	Q_PLUGIN_METADATA(IID "net.othrayte.qii.TypeHandler" FILE "stylesheetplugin.json")
 	Q_INTERFACES(TypeHandler)
 
 public:
-	struct PropertyRef {
-		QObject* object;
-		QMetaProperty metaProperty;
-	};
-
 	virtual std::list<QString> extraTypeFor(QString type, void* thing) const override;
 
 	virtual std::list<Property> propertiesFor(QString type, void* thing) const override;
@@ -32,7 +24,4 @@ public:
 
 private:
 	QImage _icon;
-	mutable QSet<QString> _knownQObjectTypes;
 };
-
-Q_DECLARE_METATYPE(MetaPropertiesPlugin::PropertyRef);

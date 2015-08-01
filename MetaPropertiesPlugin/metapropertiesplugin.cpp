@@ -7,12 +7,6 @@
 
 #include <cassert>
 
-std::list<std::string> MetaPropertiesPlugin::customTabs() const { return {}; }
-
-QWidget* MetaPropertiesPlugin::getTabContent(std::string) const { return nullptr; }
-
-void MetaPropertiesPlugin::showCustomInfoFor(QString type, void* thing) const {}
-
 std::list<QString> MetaPropertiesPlugin::extraTypeFor(QString type, void* thing) const {
 	std::list<QString> extraTypes = {};
 	if (type == "QWidget") {
@@ -74,5 +68,7 @@ bool MetaPropertiesPlugin::isSetable(Property property) const {
 	}
 	return false;
 }
+
+std::list<QWidget*> MetaPropertiesPlugin::customTabs(const QSet<QString>& types, void* thing) const { return{}; }
 
 const QImage& MetaPropertiesPlugin::icon() const { return _icon; }

@@ -16,11 +16,13 @@ public:
 	void investigate(QWidget* widget);
 
 	PropertyModel* propertyModel() { return &_model; }
+	const std::list<QWidget*> customTabs();
 
 private:
-	void investigate(QString type, void* thing);
+	void investigate(QString type);
 
 	TypeHandlerProvider& _typeHandlerProvider;
 	PropertyModel _model;
 	QSet<QString> _knownTypes;
+	void* _thing;
 };

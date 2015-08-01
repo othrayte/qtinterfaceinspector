@@ -4,10 +4,13 @@
 
 #include "widgetmodel.h"
 #include "propertyview.h"
+#include "customtabhandler.h"
 
 #include <QDialog>
 
-class QiiDialog : public QDialog, public PropertyView {
+#include <list>
+
+class QiiDialog : public QDialog, public PropertyView, public CustomTabHandler {
 	Q_OBJECT
 
 public:
@@ -15,6 +18,8 @@ public:
 	~QiiDialog();
 
 	virtual void setModel(QAbstractItemModel* model) override;
+	virtual void clearCustomTabs() override;
+	virtual void addCustomTabs(std::list<QWidget*> customTabs) override;
 
 signals:
 	void infoRequested(QWidget* widget);
@@ -22,4 +27,5 @@ signals:
 private:
 	Ui_Dialog _dialog;
 	WidgetModel _model;
+	std::list<QWidget*> _customTabs;
 };

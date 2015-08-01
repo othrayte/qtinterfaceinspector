@@ -8,30 +8,12 @@
 #include <QImage>
 #include <QVariant>
 #include <QWidget>
+#include <QSet>
 
 #include <list>
-#include <string>
 
 class TypeHandler {
 public:
-	// Lists the name of all custom tabs the handler wants to provide.
-	// Each string is the name of the tab, it will be translated and displayed on the tab.
-	// Return an empty list if no custom tabs are wanted.
-	// Not yet supported.
-	virtual std::list<std::string> customTabs() const = 0;
-
-	// Gets the content widget for a given tab name.
-	// The plugin retains ownership of the widget, if it is deleted the tab will be destroyed.
-	// Returning nullptr indicates something went wrong.
-	// Not yet supported.
-	virtual QWidget* getTabContent(std::string) const = 0;
-
-	// Show info for the given thing on custom tabs.
-	// The plugin has entire freedom with what, if anything is displayed, until this function is next called. When it is
-	// next called the new thing should be shown instead.
-	// Not yet supported.
-	virtual void showCustomInfoFor(QString type, void* thing) const = 0;
-
 	// List any extra types that the thing 'is'.
 	virtual std::list<QString> extraTypeFor(QString type, void* thing) const = 0;
 
@@ -46,6 +28,12 @@ public:
 
 	// Queries if the property is setable.
 	virtual bool isSetable(Property property) const = 0;
+
+	// Lists the custom tabs the handler wants to provide.
+	// Return an empty list if no custom tabs are wanted.
+	// The plugin retains ownership of the widget, if it is deleted the tab will be destroyed.
+	// The plugin has entire freedom with what, if anything is displayed.
+	virtual std::list<QWidget*> customTabs(const QSet<QString>& types, void* thing) const = 0;
 
 	// An icon to represent the plugin.
 	// Not yet supported.

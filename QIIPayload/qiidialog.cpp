@@ -24,4 +24,24 @@ QiiDialog::QiiDialog(QWidget* parent)
 
 void QiiDialog::setModel(QAbstractItemModel* model) { _dialog.propertyView->setModel(model); }
 
+void QiiDialog::clearCustomTabs() {
+	_dialog.tabWidget->setUpdatesEnabled(false);
+	for (auto tab : _customTabs) {
+		int index = _dialog.tabWidget->indexOf(tab);
+		_dialog.tabWidget->removeTab(index);
+		tab->deleteLater();
+	}
+	_customTabs.clear();
+	_dialog.tabWidget->setUpdatesEnabled(true);
+}
+
+void QiiDialog::addCustomTabs(std::list<QWidget*> customTabs) {
+	_dialog.tabWidget->setUpdatesEnabled(false);
+	for (auto tab : customTabs) {
+		_dialog.tabWidget->addTab(tab, tab->windowTitle());
+		_customTabs.push_back(tab);
+	}
+	_dialog.tabWidget->setUpdatesEnabled(true);
+}
+
 QiiDialog::~QiiDialog() {}

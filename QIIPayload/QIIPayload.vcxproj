@@ -180,6 +180,7 @@
     <ClCompile Include="widgetmodel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="customtabhandler.h" />
     <ClInclude Include="GeneratedFiles\ui_qiidialog.h" />
     <CustomBuild Include="inspector.h">
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(QTDIR)\bin\moc.exe;%(FullPath)</AdditionalInputs>

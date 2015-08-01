@@ -16,6 +16,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MetaPropertiesPlugin", "Met
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "QIIPlugin", "QIIPlugin\QIIPlugin.vcxproj", "{4BB4371A-FEED-4DAB-899D-34A4AA14C590}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StyleSheetPlugin", "StyleSheetPlugin\StyleSheetPlugin.vcxproj", "{B44C0C89-8B8A-4160-BA5B-371E802C03BF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -66,6 +68,14 @@ Global
 		{4BB4371A-FEED-4DAB-899D-34A4AA14C590}.Release|Win32.Build.0 = Release|Win32
 		{4BB4371A-FEED-4DAB-899D-34A4AA14C590}.Release|x64.ActiveCfg = Release|x64
 		{4BB4371A-FEED-4DAB-899D-34A4AA14C590}.Release|x64.Build.0 = Release|x64
+		{B44C0C89-8B8A-4160-BA5B-371E802C03BF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B44C0C89-8B8A-4160-BA5B-371E802C03BF}.Debug|Win32.Build.0 = Debug|Win32
+		{B44C0C89-8B8A-4160-BA5B-371E802C03BF}.Debug|x64.ActiveCfg = Debug|x64
+		{B44C0C89-8B8A-4160-BA5B-371E802C03BF}.Debug|x64.Build.0 = Debug|x64
+		{B44C0C89-8B8A-4160-BA5B-371E802C03BF}.Release|Win32.ActiveCfg = Release|Win32
+		{B44C0C89-8B8A-4160-BA5B-371E802C03BF}.Release|Win32.Build.0 = Release|Win32
+		{B44C0C89-8B8A-4160-BA5B-371E802C03BF}.Release|x64.ActiveCfg = Release|x64
+		{B44C0C89-8B8A-4160-BA5B-371E802C03BF}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
