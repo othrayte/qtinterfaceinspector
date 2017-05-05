@@ -160,6 +160,14 @@ QVariant WidgetModel::data(const QModelIndex& index, int role) const {
 	return QVariant();
 }
 
+QVariant WidgetModel::headerData(int section, Qt::Orientation orientation, int role) const
+{
+	if (role == Qt::DisplayRole && section == 0) {
+		return QString("Widgets");
+	}
+	return QVariant();
+}
+
 bool WidgetModel::canFetchMore(const QModelIndex& parent) const { return false; }
 
 void WidgetModel::fetchMore(const QModelIndex& parent) {}
