@@ -7,7 +7,7 @@
 #include <cassert>
 
 Investigation::Investigation(Process process)
-	: _injector(QFileInfo("./QIIPayload.dll"), process) {}
+	: _injector(QFileInfo("QIIPayload.dll"), process) {}
 
 Investigation::~Investigation() {
 	// Signal to the payload that it is time to leave

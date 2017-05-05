@@ -17,7 +17,10 @@ void DllInjector::inject() {
 	}
 
 	// Get full path of "qiipayload.dll"
-	QString payloadDllPath = _dllFile.canonicalFilePath();
+	QString payloadDllPath = _dllFile.isRelative()
+		? QFileInfo(QCoreApplication::applicationDirPath() + "/" + _dllFile.filePath()).canonicalFilePath()
+		: _dllFile.canonicalFilePath();
+
 	if (payloadDllPath.isEmpty()) {
 		qCritical() << QString("Unable to find %1. The installation of QII might be corrupt.").arg(_dllFile.filePath());
 		return;
