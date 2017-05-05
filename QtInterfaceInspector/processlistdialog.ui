@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>QtInterfaceInspector</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="Resources/qtinterfaceinspector.qrc">
+    <normaloff>:/icon/logo.svg</normaloff>:/icon/logo.svg</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <property name="spacing">
     <number>0</number>

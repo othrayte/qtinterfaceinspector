@@ -86,6 +86,9 @@
     <ClCompile Include="propertyitemdelegate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\qrc_qtinterfaceinspector.cpp">
+      <Filter>Generated Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="widgetmodel.h">
@@ -129,5 +132,16 @@
     <CustomBuild Include="qiidialog.ui">
       <Filter>Form Files</Filter>
     </CustomBuild>
+    <CustomBuild Include="..\QtInterfaceInspector\Resources\qtinterfaceinspector.qrc">
+      <Filter>Resource Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\QtInterfaceInspector\Resources\ic_refresh_black_48px.svg">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="..\QtInterfaceInspector\Resources\logo.svg">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

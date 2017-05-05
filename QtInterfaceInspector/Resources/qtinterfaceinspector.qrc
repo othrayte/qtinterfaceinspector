@@ -1,5 +1,6 @@
 <RCC>
-  <qresource prefix="/icon">
-    <file alias="refresh.svg">ic_refresh_black_48px.svg</file>
-  </qresource>
+    <qresource prefix="/icon">
+        <file alias="refresh.svg">ic_refresh_black_48px.svg</file>
+        <file>logo.svg</file>
+    </qresource>
 </RCC>

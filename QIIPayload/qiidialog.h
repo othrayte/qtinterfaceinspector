@@ -25,7 +25,7 @@ signals:
 	void infoRequested(QWidget* widget);
 
 private:
-	Ui_Dialog _dialog;
+	Ui_qiiParasite _dialog;
 	WidgetModel _model;
 	std::list<QWidget*> _customTabs;
 };
