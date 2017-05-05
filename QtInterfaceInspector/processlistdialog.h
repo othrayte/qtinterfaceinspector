@@ -19,6 +19,9 @@ signals:
 	void processChosen(Process);
 
 public slots:
+	void refresh();
+
+private slots:
 	void populateList(ProcessList processList);
 
 private:

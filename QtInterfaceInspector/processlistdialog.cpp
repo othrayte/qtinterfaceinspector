@@ -16,11 +16,18 @@ ProcessListDialog::ProcessListDialog(QWidget* parent, Qt::WindowFlags flags)
 		}
 	});
 
-	QFuture<ProcessList> future = QtConcurrent::run(QtProcessFinder::search);
-	_watcher.setFuture(future);
+	connect(_ui.refreshButton, &QPushButton::clicked, this, &ProcessListDialog::refresh);
+
+	refresh();
 }
 
 ProcessListDialog::~ProcessListDialog() {}
+
+void ProcessListDialog::refresh()
+{
+	QFuture<ProcessList> future = QtConcurrent::run(QtProcessFinder::search);
+	_watcher.setFuture(future);
+}
 
 void ProcessListDialog::populateList(ProcessList processList) {
 	_ui.processList->clear();
