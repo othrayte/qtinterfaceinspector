@@ -3,7 +3,9 @@
 #include <QWidget>
 #include <QEvent>
 #include <QDebug>
+#include <QRegularExpression>
 
+#include <typeinfo>
 #include <cassert>
 
 WidgetModel::WidgetModel() { _shadowMap.emplace(nullptr, WidgetInfo(nullptr)); }
@@ -155,7 +157,18 @@ int WidgetModel::columnCount(const QModelIndex& parent) const { return 1; }
 QVariant WidgetModel::data(const QModelIndex& index, int role) const {
 	if (role == Qt::DisplayRole) {
 		QWidget* widget = (QWidget*)index.internalPointer();
-		return widget->objectName();
+		QString name = widget->objectName();
+		if (name.isEmpty()) {
+			name = QString(typeid(*widget).name());
+			name.remove(QRegularExpression("^class", QRegularExpression::CaseInsensitiveOption));
+			name = name.trimmed();
+		}
+		QString qClassName = widget->metaObject()->className();
+		if (name == qClassName) {
+			return name;
+		} else {
+			return name + " (" + qClassName + ")";
+		}
 	}
 	return QVariant();
 }
