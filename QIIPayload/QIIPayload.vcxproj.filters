@@ -89,6 +89,9 @@
     <ClCompile Include="GeneratedFiles\qrc_qtinterfaceinspector.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
+    <ClCompile Include="delegatingitemdelegate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="widgetmodel.h">
@@ -113,6 +116,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="customtabhandler.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="delegatingitemdelegate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

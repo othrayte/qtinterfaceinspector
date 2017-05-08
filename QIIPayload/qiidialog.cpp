@@ -5,8 +5,9 @@
 #include <QDebug>
 #include <QApplication>
 
-QiiDialog::QiiDialog(QWidget* parent)
-	: QDialog(parent) {
+QiiDialog::QiiDialog(TypeHandlerProvider& typeHandlerProvider, QWidget* parent)
+	: QDialog(parent)
+{
 	_dialog.setupUi(this);
 
 	for (auto widget : QApplication::topLevelWidgets()) {
@@ -19,7 +20,7 @@ QiiDialog::QiiDialog(QWidget* parent)
 				emit infoRequested(static_cast<QWidget*>(selection.indexes().first().internalPointer()));
 			});
 
-	_dialog.propertyView->setItemDelegate(new PropertyItemDelegate(this));
+	_dialog.propertyView->setItemDelegate(new PropertyItemDelegate(typeHandlerProvider, this));
 }
 
 void QiiDialog::setModel(QAbstractItemModel* model) { _dialog.propertyView->setModel(model); }

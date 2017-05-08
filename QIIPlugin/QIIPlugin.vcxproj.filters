@@ -17,5 +17,8 @@
     <ClInclude Include="property.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="varianttype.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

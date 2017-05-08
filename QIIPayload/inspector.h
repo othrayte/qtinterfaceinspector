@@ -3,6 +3,7 @@
 #include "investigation.h"
 #include "propertyview.h"
 #include "customtabhandler.h"
+#include "typehandlerprovider.h"
 
 #include <QWidget>
 #include <QObject>

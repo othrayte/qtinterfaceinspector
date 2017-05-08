@@ -5,6 +5,7 @@
 #include "widgetmodel.h"
 #include "propertyview.h"
 #include "customtabhandler.h"
+#include "typehandlerprovider.h"
 
 #include <QDialog>
 
@@ -14,7 +15,7 @@ class QiiDialog : public QDialog, public PropertyView, public CustomTabHandler {
 	Q_OBJECT
 
 public:
-	QiiDialog(QWidget* parent = nullptr);
+	QiiDialog(TypeHandlerProvider& typeHandlerProvider, QWidget* parent = nullptr);
 	~QiiDialog();
 
 	virtual void setModel(QAbstractItemModel* model) override;

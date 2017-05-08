@@ -139,6 +139,7 @@
   <ItemGroup>
     <ClInclude Include="property.h" />
     <ClInclude Include="typehandler.h" />
+    <ClInclude Include="varianttype.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,9 +1,11 @@
 #pragma once
 
 #include "property.h"
+#include "varianttype.h"
 
 #include <QtPlugin>
 
+#include <QAbstractItemDelegate>
 #include <QString>
 #include <QImage>
 #include <QVariant>
@@ -28,6 +30,9 @@ public:
 
 	// Queries if the property is setable.
 	virtual bool isSetable(Property property) const = 0;
+
+	virtual bool hasDelegateFor(VariantType type) const { return false; };
+	virtual QAbstractItemDelegate* makeDelegateFor(VariantType type, QObject* parent) const { return nullptr; };
 
 	// Lists the custom tabs the handler wants to provide.
 	// Return an empty list if no custom tabs are wanted.
