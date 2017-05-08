@@ -12,7 +12,6 @@ ProcessList QtProcessFinder::search() {
 	HANDLE hProcessSnap;
 	HANDLE hProcess;
 	PROCESSENTRY32 pe32;
-	DWORD dwPriorityClass;
 
 	// Take a snapshot of all processes in the system.
 	hProcessSnap = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
@@ -38,20 +37,19 @@ ProcessList QtProcessFinder::search() {
 		// Skip the system idle process
 		if (pe32.th32ProcessID == 0) continue;
 
-		// Retrieve the priority class.
-		dwPriorityClass = 0;
-		hProcess = OpenProcess(PROCESS_ALL_ACCESS, FALSE, pe32.th32ProcessID);
-		if (hProcess == NULL)
-			qDebug("OpenProcess");
-		else {
-			dwPriorityClass = GetPriorityClass(hProcess);
-			if (!dwPriorityClass) qDebug("GetPriorityClass");
-			CloseHandle(hProcess);
-		}
-
 		// List the modules and threads associated with this process
 		if (processUsesQt(pe32.th32ProcessID)) {
-			list.push_back(Process(pe32.th32ProcessID, QString::fromStdWString(pe32.szExeFile)));
+			// Get the full module path
+			DWORD filenameLen = 512;
+			WCHAR lpFilename[512];
+			hProcess = OpenProcess(PROCESS_QUERY_LIMITED_INFORMATION, FALSE, pe32.th32ProcessID);
+			if (hProcess == NULL)
+				qDebug("OpenProcess");
+			else {
+				QueryFullProcessImageName(hProcess, NULL, lpFilename, &filenameLen);
+				CloseHandle(hProcess);
+			}
+			list.push_back(Process(pe32.th32ProcessID, QString::fromStdWString(lpFilename)));
 		}
 
 	} while (Process32Next(hProcessSnap, &pe32));

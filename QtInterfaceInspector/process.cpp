@@ -1,8 +1,8 @@
 #include "process.h"
 
-Process::Process(int pid, QString name)
+Process::Process(int pid, QFileInfo module)
 	: _pid(pid)
-	, _name(name)
+	, _module(module)
 	, _processHandle(nullptr) {}
 
 Process::~Process() {

@@ -34,9 +34,25 @@
     <number>0</number>
    </property>
    <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Double-click a target Qt process from below</string>
+     </property>
+     <property name="margin">
+      <number>6</number>
+     </property>
+    </widget>
+   </item>
+   <item>
     <widget class="QListWidget" name="processList">
      <property name="frameShape">
       <enum>QFrame::NoFrame</enum>
+     </property>
+     <property name="spacing">
+      <number>6</number>
+     </property>
+     <property name="viewMode">
+      <enum>QListView::IconMode</enum>
      </property>
     </widget>
    </item>
