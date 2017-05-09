@@ -18,7 +18,12 @@ QiiDialog::QiiDialog(TypeHandlerProvider& typeHandlerProvider, QWidget* parent)
 	connect(_dialog.treeView->selectionModel(), &QItemSelectionModel::selectionChanged,
 			[this](const QItemSelection& selection, const QItemSelection&) {
 				emit infoRequested(static_cast<QWidget*>(selection.indexes().first().internalPointer()));
-			});
+	});
+	connect(_dialog.treeView, &QAbstractItemView::clicked,
+		[this](const QModelIndex &index) {
+		emit widgetClicked(static_cast<QWidget*>(index.internalPointer()));
+	});
+	
 
 	_dialog.propertyView->setItemDelegate(new PropertyItemDelegate(typeHandlerProvider, this));
 }

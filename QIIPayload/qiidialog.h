@@ -24,6 +24,7 @@ public:
 
 signals:
 	void infoRequested(QWidget* widget);
+	void widgetClicked(QWidget* widget);
 
 private:
 	Ui_qiiParasite _dialog;

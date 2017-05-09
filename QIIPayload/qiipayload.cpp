@@ -40,7 +40,11 @@ void QiiPayload::start() {
 
 	auto inspector = new Inspector(*pluginManager, *dialog, *dialog, this);
 
+	auto highlighter = new WindowHighlighter();
+	connect(this, &QObject::destroyed, highlighter, &QObject::deleteLater);
+
 	connect(dialog, &QiiDialog::infoRequested, inspector, &Inspector::startInvestigation);
+	connect(dialog, &QiiDialog::widgetClicked, highlighter, &WindowHighlighter::highlight);
 
 	QFile stylesheet(":/qdarkstyle/style.qss");
 	if (!stylesheet.open(QFile::ReadOnly | QFile::Text))
