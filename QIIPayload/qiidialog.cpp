@@ -15,6 +15,7 @@ QiiDialog::QiiDialog(TypeHandlerProvider& typeHandlerProvider, QWidget* parent)
 	}
 	_dialog.treeView->setSelectionMode(QAbstractItemView::SingleSelection);
 	_dialog.treeView->setModel(&_model);
+	_dialog.treeView->header()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
 	connect(_dialog.treeView->selectionModel(), &QItemSelectionModel::selectionChanged,
 			[this](const QItemSelection& selection, const QItemSelection&) {
 				emit infoRequested(static_cast<QWidget*>(selection.indexes().first().internalPointer()));
