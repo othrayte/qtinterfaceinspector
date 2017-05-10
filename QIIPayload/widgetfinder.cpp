@@ -57,7 +57,7 @@ void WidgetFinder::mousePressEvent(QMouseEvent* event)
 	setMouseTracking(false);
 	_timer.stop();
 	hide();
-	emit found(_widget);
+	if (_widget) emit found(_widget);
 }
 
 void WidgetFinder::mouseMoveEvent(QMouseEvent* event)
