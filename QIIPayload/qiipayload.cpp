@@ -3,6 +3,7 @@
 #include "pluginmanager.h"
 #include "qiidialog.h"
 #include "inspector.h"
+#include "windowhighlighter.h"
 
 #include <QGuiApplication>
 #include <QDebug>
