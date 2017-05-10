@@ -37,14 +37,16 @@ public:
 	virtual bool eventFilter(QObject* watched, QEvent* event) override;
 
 	void addRootWidget(QWidget* widget);
+	void ensureWidgetAdded(QWidget* widget);
 
 	void addWidget(QWidget* parent, QWidget* widget);
 	void removeWidget(QWidget* parent, QWidget* widget);
 
+	QModelIndex indexFor(QWidget* widget) const;
+
 private:
 	void watch(QWidget* widget) const;
 	const std::vector<QWidget*>& getChildren(QWidget* widget) const;
-	QModelIndex indexFor(QWidget* widget) const;
 
 	mutable std::unordered_map<QWidget*, WidgetInfo> _shadowMap;
 };

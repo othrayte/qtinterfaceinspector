@@ -1,9 +1,11 @@
 #include "qiidialog.h"
 
 #include "propertyitemdelegate.h"
+#include "widgetfinder.h"
 
 #include <QDebug>
 #include <QApplication>
+#include <QAbstractButton>
 
 QiiDialog::QiiDialog(TypeHandlerProvider& typeHandlerProvider, QWidget* parent)
 	: QDialog(parent)
@@ -24,7 +26,16 @@ QiiDialog::QiiDialog(TypeHandlerProvider& typeHandlerProvider, QWidget* parent)
 		[this](const QModelIndex &index) {
 		emit widgetClicked(static_cast<QWidget*>(index.internalPointer()));
 	});
-	
+
+	auto finder = new WidgetFinder();
+	connect(this, &QObject::destroyed, finder, &QObject::deleteLater);
+	connect(finder, &WidgetFinder::found, [this](QWidget* widget){
+		_model.ensureWidgetAdded(widget);
+		_dialog.treeView->selectionModel()->setCurrentIndex(_model.indexFor(widget), QItemSelectionModel::ClearAndSelect);
+	});
+
+	connect(_dialog.findWidgetButton, &QAbstractButton::clicked, finder, &WidgetFinder::start);
+
 
 	_dialog.propertyView->setItemDelegate(new PropertyItemDelegate(typeHandlerProvider, this));
 }

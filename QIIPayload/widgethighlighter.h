@@ -1,15 +1,16 @@
 #pragma once
 
-#include <QDialog>
+#include "overlaywindow.h"
+
 #include <QPainter>
 #include <QPaintEvent>
 #include <QTimer>
 
-class WindowHighlighter : public QDialog {
+class WidgetHighlighter : public OverlayWindow {
 	Q_OBJECT
 public:
-	WindowHighlighter(int pulses = 3, int period = 300);
-	~WindowHighlighter() {}
+	WidgetHighlighter(int pulses = 3, int period = 300);
+	~WidgetHighlighter() {}
 
 public slots:
 	void highlight(QWidget* widget);

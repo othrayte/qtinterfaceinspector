@@ -3,7 +3,7 @@
 #include "pluginmanager.h"
 #include "qiidialog.h"
 #include "inspector.h"
-#include "windowhighlighter.h"
+#include "widgethighlighter.h"
 
 #include <QGuiApplication>
 #include <QDebug>
@@ -41,11 +41,11 @@ void QiiPayload::start() {
 
 	auto inspector = new Inspector(*pluginManager, *dialog, *dialog, this);
 
-	auto highlighter = new WindowHighlighter();
+	auto highlighter = new WidgetHighlighter();
 	connect(this, &QObject::destroyed, highlighter, &QObject::deleteLater);
 
 	connect(dialog, &QiiDialog::infoRequested, inspector, &Inspector::startInvestigation);
-	connect(dialog, &QiiDialog::widgetClicked, highlighter, &WindowHighlighter::highlight);
+	connect(dialog, &QiiDialog::widgetClicked, highlighter, &WidgetHighlighter::highlight);
 
 	QFile stylesheet(":/qdarkstyle/style.qss");
 	if (!stylesheet.open(QFile::ReadOnly | QFile::Text))

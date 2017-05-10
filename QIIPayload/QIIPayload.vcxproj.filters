@@ -92,13 +92,22 @@
     <ClCompile Include="delegatingitemdelegate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="windowhighlighter.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_windowhighlighter.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_widgetfinder.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_windowhighlighter.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_widgetfinder.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="widgetfinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="widgethighlighter.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_widgethighlighter.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_widgethighlighter.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
   </ItemGroup>
@@ -130,6 +139,9 @@
     <ClInclude Include="delegatingitemdelegate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="overlaywindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="qiipayload.h">
@@ -150,7 +162,10 @@
     <CustomBuild Include="..\QtInterfaceInspector\Resources\qtinterfaceinspector.qrc">
       <Filter>Resource Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="windowhighlighter.h">
+    <CustomBuild Include="widgetfinder.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="widgethighlighter.h">
       <Filter>Header Files</Filter>
     </CustomBuild>
   </ItemGroup>

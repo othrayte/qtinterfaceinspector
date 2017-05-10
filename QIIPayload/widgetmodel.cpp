@@ -44,6 +44,15 @@ void WidgetModel::addRootWidget(QWidget* widget) {
 	}
 }
 
+void WidgetModel::ensureWidgetAdded(QWidget* widget)
+{
+	if (_shadowMap.count(widget) == 0) {
+		QWidget* parent = widget->parentWidget();
+		ensureWidgetAdded(parent);
+		addWidget(parent, widget);
+	}
+}
+
 void WidgetModel::addWidget(QWidget* parent, QWidget* widget) {
 	assert(_shadowMap.count(parent) > 0);
 	if (_shadowMap.count(widget) == 0) {
